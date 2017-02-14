@@ -1,10 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-  	<%= link_to "Chore Weasel", '#', id: "logo" %>
+  	<%= link_to "Chore Weasel", root_path, id: "logo" %>
   		<nav>
 			 <ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "Home",		'http://localhost:3000/' %></li>
-				<li><%= link_to "Help",		'http://localhost:3000/static_pages/help' %></li>
+				<li><%= link_to "Home",		root_path %></li>
+				<li><%= link_to "Help",		help_path %></li>
 				<li><%= link_to "Log in",	'#' %></li>
 			</ul>
 		</nav>
