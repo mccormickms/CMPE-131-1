@@ -1,2 +1,16 @@
-<h1>Chore Weasel</h1>
-<p>We do stuff you don't want to, if you pay us</p>
+<% provide(:title, "Home") %>
+
+<div class="center jumbotron">
+	<h1>Chore Weasel</h1>
+
+	<h2>
+		<p>
+			We do stuff you don't want to, if you pay us. We may not though, depends how we feel.
+		</p>
+	</h2>
+
+	<%= link_to "Sign up now, or whatever.", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("friendly-ferret.png", alt: "Ferret takes out trash") %>
+
