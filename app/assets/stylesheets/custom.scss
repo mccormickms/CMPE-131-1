@@ -5,6 +5,7 @@
 
 $gray-medium-light: #eaeaea;
 $gray-light: #777;
+$white: #fff;
 
 /* universal */
 
@@ -29,8 +30,9 @@ textarea {
 
 /* typography */	
 
-
-
+.btn {
+	color: #fff;
+}
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
