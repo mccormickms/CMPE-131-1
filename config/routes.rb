@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/demoAcceptjob', to: 'static_pages#demoAcceptjob'
+
   get '/demoUserpage',  to: 'static_pages#demoUserpage'
 
   get '/demoSearch',    to: 'static_pages#demoSearch'
