@@ -1,0 +1,34 @@
+<style>
+fieldset {
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 270px;
+}
+label{float: left width:12px}
+input{width: 120px}
+</style>
+
+<form>
+<h1> Jobs Search </h1>
+<h2> leaving an entry blank means any </h2>
+<fieldset>
+<label> Distance: </label>
+<input type='text'>
+</fieldset><br>
+<fieldset>
+<label> Date: </label>
+<input type='text'> to <input type='text'>
+</fieldset><br>
+<fieldset>
+<label> Time: </label>
+<input type='text'> to <input type='text'>
+</fieldset><br>
+<fieldset>
+<label> Job Payment: </label>
+$<input type='text'>
+</fieldset><br>
+</form>
+<center>
+<%= link_to "Search", '/demoJoblisting',style: "color:#FFFFFF", class: "btn btn-lg btn-primary" %>
+</center>
