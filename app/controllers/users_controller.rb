@@ -8,6 +8,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /jobs/new
