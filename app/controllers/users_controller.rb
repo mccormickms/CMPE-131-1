@@ -5,23 +5,23 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @users = User.all
   end
 
-  # GET /jobs/1
-  # GET /jobs/1.json
+  # GET /user/1
+  # GET /user/1.json
   def show
     @user = User.find(params[:id])
   end
 
-  # GET /jobs/new
+  # GET /user/new
   def new
     @user = User.new
   end
 
-  # GET /jobs/1/edit
+  # GET /user/1/edit
   def edit
   end
 
-  # POST /jobs
-  # POST /jobs.json
+  # POST /user
+  # POST /user.json
   def create
     @user = User.new(user_params)
 
@@ -36,8 +36,8 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     end
   end
 
-  # PATCH/PUT /jobs/1
-  # PATCH/PUT /jobs/1.json
+  # PATCH/PUT /user/1
+  # PATCH/PUT /user/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -50,8 +50,8 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     end
   end
 
-  # DELETE /jobs/1
-  # DELETE /jobs/1.json
+  # DELETE /user/1
+  # DELETE /user/1.json
   def destroy
     @user.destroy
     respond_to do |format|
