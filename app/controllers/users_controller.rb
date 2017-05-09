@@ -8,6 +8,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /jobs/new
@@ -26,6 +27,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     respond_to do |format|
       if @user.save
+        flash[:success] = "Welcome to Chore Weasel!"
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -67,6 +69,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
     end
 end
