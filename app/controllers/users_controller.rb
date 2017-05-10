@@ -27,6 +27,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     respond_to do |format|
       if @user.save
+        log_in @user
         flash[:success] = "Welcome to Chore Weasel!"
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
