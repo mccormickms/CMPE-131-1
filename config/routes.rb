@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get '/jobs',      to: 'jobs#index'
 
-  get '/signup',    to: 'users#new'
+  get '/signup',    to: 'users#create'
 
   get '/login',     to: 'sessions#new'
 
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   mount Commontator::Engine => '/commontator'
-  
+
   get 'users/new'
 
   resources :jobs
