@@ -9,15 +9,9 @@ class JobsController < ApplicationController
   end
 
   def search
-    if params[:zipcode].present? && params[:price].present?
-      @results = Job.zipcode(params) & Job.price(params).order("price DESC")
-    elsif params[:zipcode].present?
-      @results = Job.zipcode(params).order("price DESC")
-    elsif params[:price].present?
-      @results = Job.price(params).order("price DESC")
-    end
-    else
-      @results = Job.all
+    @results = Job.all
+    @results = @results.zipcode(params).order('price DESC') if params[:zipcode].present?
+    @results = @results.price(params).reorder('price DESC') if params[:price].present?
   end
 
 
