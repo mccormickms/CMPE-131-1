@@ -14,4 +14,7 @@ class User < ApplicationRecord
 																									BCrypt::Engine.cost
 		BCrypt::Password.create(string, cost: cost)
 	end
+
+	acts_as_commontator
+	
 end
