@@ -2,7 +2,6 @@
 fieldset {
     overflow: hidden;
     margin-bottom: 10px;
-    display: inline-block;
     width: 270px;
 }
 label{float: left width:12px}
@@ -12,6 +11,7 @@ table {
     width: 100%;
 }
 td, th{
+    font-size: 16px;
     border: 1px solid gray;
     text-align: left;
     padding: 8px;
@@ -37,7 +37,7 @@ tr:nth-child(even) {
 <% if @results.blank? %>
 <p> No Results matching search parameters found</p>
 <% end %>
-<h3> Jobs Listings <h3>
+<h1> Jobs Listings <h1>
     <table>
     <thead>
     <tr>
