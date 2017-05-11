@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   get '/search',    to: 'jobs#search'
 
-
  get '/jobs',      to: 'jobs#index'
 
   get '/signup',    to: 'users#new'
