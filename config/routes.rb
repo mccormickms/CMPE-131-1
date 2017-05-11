@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
+  mount Commontator::Engine => '/commontator'
+
   get 'users/new'
 
   resources :jobs
