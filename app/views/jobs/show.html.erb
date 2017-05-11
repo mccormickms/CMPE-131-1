@@ -3,17 +3,16 @@
 <% provide(:title, 'Jobs') %>
 
 <p>
-  <strong>Title:</strong>
-  <%= @job.title %>
+  <font size='6'><%= @job.title %></font>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Job Description:</strong><br>
   <%= @job.content %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Salary:</strong>
   <%= @job.price %>
 </p>
 
@@ -22,5 +21,4 @@
   <%= @job.zipcode %>
 </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Back', search_path %>
