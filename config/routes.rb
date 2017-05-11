@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   get '/jobs',      to: 'jobs#index'
 
-  get '/signup',    to: 'users#create'
+  get '/signup',    to: 'users#new'
+
+  post '/signup',   to: 'users#create'
 
   get '/login',     to: 'sessions#new'
 
