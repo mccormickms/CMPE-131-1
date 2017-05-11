@@ -1,6 +1,9 @@
 class Job < ApplicationRecord
 
 
+
+
+
     def self.zipcode(params)
         if params[:zipcode].present?
             where("zipcode = ?", params[:zipcode])
@@ -17,9 +20,16 @@ class Job < ApplicationRecord
         end
     end
 
+
 	belongs_to :user
 	validates :user_id, presence: true
 	acts_as_commontable
 
+
+
+  
+	belongs_to :user
+	validates :user_id, presence: true
+	acts_as_commontable
 
 end
