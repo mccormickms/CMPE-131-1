@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update, :destroy]
+before_action :correct_user, only: [:edit, :update]
 
   def index
     @users = User.all
@@ -27,6 +28,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     respond_to do |format|
       if @user.save
+        log_in @user
         flash[:success] = "Welcome to Chore Weasel!"
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -72,4 +74,10 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)      
+    end
+
 end
