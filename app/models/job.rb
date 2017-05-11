@@ -15,5 +15,8 @@ class Job < ApplicationRecord
             job = all
         end
     end
-
+  
+	belongs_to :user
+	validates :user_id, presence: true
+	acts_as_commontable
 end

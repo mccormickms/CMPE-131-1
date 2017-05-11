@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.11'
 
+#for adding comments to jobs
+gem 'commontator', '~>4.11.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
