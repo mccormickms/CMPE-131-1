@@ -20,7 +20,9 @@
   <strong>  Zipcode:</strong>
   <%= @job.zipcode %>
 </p>
-<form>
-<input type="submit" value='Accept Job Offer'>
-</form>
-<%= link_to 'Back', search_path %>
+
+<%= commontator_thread(@job) %>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
+
