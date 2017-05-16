@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   get '/contact',		to: 'static_pages#contact'
 
-  get '/jobs',      to: 'jobs#index'
+  get '/search',    to: 'jobs#search'
+
+ get '/jobs',      to: 'jobs#index'
 
   get '/signup',    to: 'users#new'
 

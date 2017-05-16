@@ -1,0 +1,67 @@
+<style>
+fieldset {
+    overflow: hidden;
+    margin-bottom: 10px;
+    width: 270px;
+}
+label{float: left width:12px}
+input{width: 120px}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th{
+    font-size: 16px;
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+
+
+<h1> Jobs Search </h1>
+<%= form_tag search_path, :method => 'get' do %>
+    <fieldset>
+    <label> Zipcode </label>
+        <%= text_field_tag :zipcode, params[:zipcode] %>
+    <label> Price </label>
+        <%= text_field_tag :price, params[:price] %> USD
+    </fieldset>
+        <%= submit_tag "Search", :name => nil, style: "color:#FFFFFF", class: "btn btn-lg btn-primary" %>
+<% end %>
+
+<% if @results.blank? %>
+<p> No Results matching search parameters found</p>
+<% else %>
+<h1> Jobs Listings </h1>
+    <table>
+    <thead>
+    <tr>
+        <th>Job Title</th>
+        <th>Description</th>
+        <th>Zipcode</th>
+        <th>Salary</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @results.each do |result| %>
+    <tr>
+        <td> <%= link_to result.title, result  %>  </td>
+        <td> <%= link_to result.content, result %></td>
+        <td> <%= link_to result.zipcode, result %></td>
+        <td> $<%= link_to result.price, result %> </td>
+    </tr>
+    <%end%>
+    </tbody>
+    
+</table>
+<%end%>
+
+
+

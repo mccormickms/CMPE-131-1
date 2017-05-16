@@ -6,14 +6,20 @@
 <div class="row">
 	<aside class="col-md-4">
 		<section class="user_info">
-			<h1>
 				<%= gravatar_for @user %>
-				<%= @user.name %>
-				<%= link_to 'Edit', edit_user_path(@user) %> |
-				<%= link_to 'Back', users_path %>
-			</h1>
+				<div align='left' style="margin:10px 0 0 10px">
+				<font size='20'><%= @user.name %></font>
+				</div>
 		</section>
 	</aside>
+</div>
+<div class="row">
+		<div  align='left'>
+		<%= link_to "Edit User", edit_user_path(@user),style: "color:#FFFFFF", class: "btn btn-primary" %>
+		<%= link_to "Post Job", '/jobs/new',style: "color:#FFFFFF", class: "btn btn-primary" %>
+		<%= link_to "Check Posted Jobs", jobs_path ,style: "color:#FFFFFF", class: "btn btn-primary" %>
+		<%= link_to "Search Jobs", search_path,style: "color:#FFFFFF", class: "btn btn-primary" %>
+	</div> <!--End of margin Div-->
 </div>
 
 

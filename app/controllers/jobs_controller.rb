@@ -8,6 +8,13 @@ class JobsController < ApplicationController
     @jobs = Job.all
   end
 
+  def search
+    @results = Job.all
+    @results = @results.zipcode(params).order('price DESC') if params[:zipcode].present?
+    @results = @results.price(params).reorder('price DESC') if params[:price].present?
+  end
+
+
   # GET /jobs/1
   # GET /jobs/1.json
   def show
@@ -78,4 +85,5 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:title, :content, :price, :zipcode)
     end
+
 end
